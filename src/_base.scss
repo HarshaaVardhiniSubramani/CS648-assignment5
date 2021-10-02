@@ -1,0 +1,29 @@
+/* BASE STYLES */
+body  {
+    font-family: $bodyFont, sans-serif;
+    font-size:1em;
+    line-height:2em;
+    background:url($bodyBgImg) $white repeat-x;
+    margin:0;
+  }
+  
+  main  {
+    width:940px;
+    margin:0 auto;
+    padding:0 15px;
+    @include insertMediaQuery(952px) {
+      width:764px;
+    }
+    @include insertMediaQuery(763px) {
+      width:450px;
+    }
+    @include insertMediaQuery(454px) {
+      width:310px;
+    }
+  }
+  
+  section {
+    @include insertMediaQuery(459px) {
+      width:95%;
+    }
+  }
