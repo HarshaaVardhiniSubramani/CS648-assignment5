@@ -1,29 +1,34 @@
 /* BASE STYLES */
-body  {
-    font-family: $bodyFont, sans-serif;
-    font-size:1em;
-    line-height:2em;
-    background:url($bodyBgImg) $white repeat-x;
-    margin:0;
-  }
+body{
+font-family: $base-font ;
+font-size:1em;
+line-height:2em;
+background:$bg-img $base-color repeat-x;
+margin:0;
+}
+
+main{
+  @include dimension(940px, auto);
+  margin:0 auto;
+  padding:0 10px;
   
-  main  {
-    width:940px;
-    margin:0 auto;
-    padding:0 15px;
-    @include insertMediaQuery(952px) {
-      width:764px;
-    }
-    @include insertMediaQuery(763px) {
-      width:450px;
-    }
-    @include insertMediaQuery(454px) {
-      width:310px;
-    }
+  @include break ($large){
+    width:768px;  
   }
-  
-  section {
-    @include insertMediaQuery(459px) {
-      width:95%;
-    }
+
+  @include break ($medium){
+    width:460px;
   }
+
+  @include break ($small){
+    width:300px;
+  }
+}
+
+article {
+  img {
+      @include break ($small){
+        display:none;
+      }
+    }
+}

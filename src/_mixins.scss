@@ -1,33 +1,37 @@
-@mixin setWidthHeight($width, $height) {
-    width: $width;
-    height: $height;
-  }
-  
-  @mixin socialMediaImg($offest:  0px) {
-    background:url($socialMediaImg) -38px * $offest 0;
-  }
-  
-  @mixin navigation($width, $height, $float) {
-    @include setWidthHeight($width, $height);
-    float: $float;
-  }
-  
-  @mixin headers($color, $fnt-wt, $fnt-size, $li-ht: 0) {
-    color: $color;
-    font-weight:$fnt-wt;
-    font-size:$fnt-size;
-    line-height:$li-ht;
-  }
-  
-  @mixin contentStyles($width, $float) {
-    width: $width;
-    float: $float;
-  }
-  
-  @mixin insertMediaQuery($args) {
-    @if length($args) == 1 {
-      @media (max-width: nth($args, 1)) {
+@mixin header($color, $weight, $size, $height ){
+color: $color;
+font-weight: $weight;
+font-size: $size;
+line-height: $height;
+}
+
+@mixin dimension($w, $h){
+    width: $w;
+    height: $h;
+}
+
+@mixin logo($pic){
+background: $pic no-repeat 0 50px;
+float:left;
+display:block;
+margin:0;
+}
+
+@mixin Content_head($color, $size, $weight){
+    color: $color ;
+    font-size:$size;
+    font-weight: $weight;
+}
+
+@mixin footer ($bgcolor, $algn, $color, $pad-top){
+background: $dark-grey;
+text-align:center;
+color: $base-color;
+padding-top:50px;
+}
+
+@mixin break($ln) {
+    @media screen and (max-width: $ln){
         @content;
-      }
     }
-  }
+}
